@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ansh Singh — Portfolio
+
+A cinematic, scroll-driven portfolio site for **Ansh Singh** — Agentic AI Engineer & Full-Stack Developer.
+
+**Live site:** [ansh-singh-portfolio.vercel.app](https://ansh-singh-portfolio.vercel.app)
+
+## Stack
+
+- **[Next.js 14](https://nextjs.org)** (App Router) + TypeScript + Tailwind CSS
+- **[Three.js](https://threejs.org) / [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)** for the 3D scenes (Hero's orbital rings, the Chapter II camera dolly)
+- **[GSAP](https://gsap.com) + ScrollTrigger** for scroll-pinned cinematic sections
+- **[Lenis](https://lenis.darkroom.engineering)** for smooth scroll
+- **[Framer Motion](https://www.framer.com/motion)** for UI transitions
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build   # production build
+pnpm start   # serve the production build
+pnpm lint    # run eslint
+```
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/components/sections/` — the seven chapters of the page (Hero, Dolly, Skills, Projects, Experience, Education, Contact), each a self-contained scroll section
+- `src/components/ui/` — shared chrome (nav, cursor, preloader, scroll progress)
+- `src/components/canvas/` — reusable Three.js pieces
+- `src/lib/constants.ts` — all site copy/data (skills, projects, experience, education)
+- `src/lib/skillIcons.tsx` — brand-logo + color mapping for the Skills toolkit
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on [Vercel](https://vercel.com), auto-deploying on every push to `main`.
